@@ -121,7 +121,7 @@ wgdir="/home/$USER/Downloads"
 # Specify the absolute path and filename to store a .json of all the
 # NordVPN servers (about 20MB). Avoids API server timeouts.  Create the
 # list at:  Tools - NordVPN API - All VPN Servers
-nordserversfile="/home/$USER/Downloads/nord_allservers.json"
+nordserversfile="/home/$USER/Documents/nord_allservers.json"
 #
 # Specify the absolute path and filename to store a local list of your
 # favorite NordVPN servers.  eg. Low ping servers or streaming servers.
@@ -140,14 +140,14 @@ titlebartext="NORD"
 #
 # When changing servers disconnect the VPN first, then connect to the
 # new server.  "y" or "n"
-disconnect="n"
+disconnect="y"
 #
 # Always 'Rate Server' when disconnecting via the main menu. "y" or "n"
-rate_prompt="y"
+rate_prompt="n"
 #
 # Ask to pause the VPN when disconnecting via the main menu
 # (disconnect and automatically reconnect).  "y" or "n"
-pause_prompt="y"
+pause_prompt="n"
 #
 # Specify the default number of minutes to pause the VPN.
 default_pause="5"
@@ -164,20 +164,20 @@ exitping="n"
 #
 # Query the current server load when the script exits.  "y" or "n"
 # Requires 'curl' 'jq' and the local 'nordserversfile' mentioned above.
-exitload="n"
+exitload="y"
 #
 # Show your external IP address when the script exits.  "y" or "n"
 # Requires 'curl' and 'jq'.  Connects to ipinfo.io.
-exitip="n"
+exitip="y"
 #
 # Reload the "Bash Sensors" Cinnamon applet when the script exits.
 # This will change the icon color (for connection status) immediately.
 # Only for the Cinnamon DE with "Bash Sensors" installed. "y" or "n"
-exitappletb="n"
+exitappletb="y"
 #
 # Reload the "Network Manager" Cinnamon applet when the script exits.
 # This removes duplicate "nordlynx" entries from the applet. "y" or "n"
-exitappletn="n"
+exitappletn="y"
 #
 # Open http links in a new Firefox window.  "y" or "n"
 # Choose "n" to use the default browser or method.
@@ -214,7 +214,7 @@ upmenu="0"
 # Choose "y" or "n"
 #
 # Return to the main menu without prompting "Press any key..."
-fast1="n"
+fast1="y"
 #
 # Automatically change these settings without prompting:  Firewall,
 # Routing, Analytics, KillSwitch, TPLite, Notify, Tray, AutoConnect,
@@ -401,15 +401,15 @@ function main_menu {
     # An almost unlimited number of menu items can be added.
     # Submenu functions can be added to the main menu for easier access.
     #
-    mainmenu=( "Vancouver" "Seattle" "Chicago" "Denver" "Atlanta" "US_Cities" "CA_Cities" "P2P-USA" "P2P-Canada" "Discord" "QuickConnect" "Random" "Favorites" "Countries" "Groups" "Settings" "Tools" "Meshnet" "Disconnect" "Exit" )
+    mainmenu=( "New York" "Seattle" "Chicago" "Denver" "Atlanta" "US_Cities" "CA_Cities" "P2P-USA" "P2P-Canada" "Discord" "QuickConnect" "Random" "Favorites" "Countries" "Groups" "Settings" "Tools" "Meshnet" "Disconnect" "Exit" )
     #
     select opt in "${mainmenu[@]}"
     do
         parent_menu
         case $opt in
-            "Vancouver")
+            "New York")
                 main_header
-                nordvpn connect Vancouver
+                nordvpn connect New_York
                 status
                 break
                 ;;
